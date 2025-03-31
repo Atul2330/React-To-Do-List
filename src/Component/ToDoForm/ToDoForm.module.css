@@ -52,3 +52,6 @@
 .FormField textarea{
     resize: none;
 }
+.Title button{
+    align-self: center;
+}

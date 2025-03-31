@@ -35,5 +35,11 @@ button{
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 button:hover{
-  background-color: lightslategray;
+  background-color: lightgray;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
