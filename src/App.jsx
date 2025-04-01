@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import ToDoForm from "./Component/ToDoForm/ToDoForm";
 import ToDoList from "./Component/ToDoList/ToDoList";
+import ToDoFilters from "./Component/ToDoFilters/ToDoFilters";
 
 
 const TODO_DEFAULT=[{
@@ -40,7 +41,7 @@ const TODO_DEFAULT=[{
 
 function App() {
 const [todos,setTodos]=useState(TODO_DEFAULT);
-
+const [filters,setFilters]=useState({});
 function handleCreate(newTodo){
   setTodos((prevTodos)=>[
     ...prevTodos,
@@ -50,7 +51,15 @@ function handleCreate(newTodo){
 function handleUpdate(id,newTodo){
   setTodos((prevTodos)=> prevTodos.map((todo)=> todo.id === id ?newTodo :todo))
 }
-
+function filterTodos(todo){
+  const {completed,priority}=filters
+  return(
+  (completed===""||todo.completed===completed) && (priority===""|| todo.priority===priority)
+  );
+}
+function handleDelete(id){
+  setTodos((prevTodos)=>prevTodos.filter((todo)=> todo.id !==id))
+}
   return(
   <div className={styles.App}>
     <header className={styles.Header}>
@@ -59,7 +68,8 @@ function handleUpdate(id,newTodo){
     </header>
     <div className={styles.AppContainer}>
       <ToDoForm onCreate={handleCreate}/>
-      <ToDoList todos={todos} onUpdate={handleUpdate}/>
+      <ToDoFilters onFilter={setFilters}/>
+      <ToDoList todos={todos.filter(filterTodos)} onUpdate={handleUpdate} onDelete={handleDelete}/>
     </div>
   </div>
   )

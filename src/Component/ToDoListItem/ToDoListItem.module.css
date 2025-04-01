@@ -30,3 +30,15 @@
     font-size: 13px;
     color: gray;
   }
+
+  .controls button,.controls input{
+    background-color:transparent;
+    font-size: 12px;
+  }
+
+  .controls{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+    align-self: flex-start;
+  }
