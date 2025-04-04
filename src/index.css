@@ -1,44 +1,46 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: light-dark(#0d0d0d,#ececec);
-  background-color: light-dark(#f3f3f3,#171717);
+  color: light-dark(#0d0d0d, #ececec);
+  background: light-dark(#f3f3f3, #171717);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-*{
+
+* {
   box-sizing: border-box;
 }
+
 body {
-  margin: 0 auto;
   width: 100%;
-  padding: 0 24px;
-  min-width: 640px;
+  max-width: 640px;
   min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 input,
 textarea,
 select,
-button{
+button {
   padding: 4px 8px;
   border-radius: 4px;
-  border: 1px solid lightdark(#d1d1d1,#333333)
+  border: 1px solid light-dark(#d1d1d1, #333333);
 }
 
 input[type="submit"]:hover,
 input[type="reset"]:hover,
-button:hover{
-  background-color: lightgray;
+button:hover {
+  background: lightgray;
 }
 
-ul{
+ul {
   list-style: none;
   margin: 0;
   padding: 0;

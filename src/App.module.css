@@ -1,4 +1,4 @@
-.App{
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,20 +6,24 @@
   height: 100vh;
   padding: 16px;
 }
-.Header{
+
+.Header {
   text-align: center;
 }
-.Logo{
+
+.Logo {
   width: 64px;
   height: 64px;
 }
-.Title{
+
+.Title {
   margin: 0;
 }
-.AppContainer{
+
+.AppContainer {
   width: 100%;
   padding: 16px;
-  background: light-dark(#ffffff,#212121);
+  background: light-dark(#ffffff, #212121);
   border-radius: 16px;
   overflow-y: auto;
 }
